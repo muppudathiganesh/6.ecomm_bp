@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qfr=-t#$==vk7m1gn24q7fbu!yup)6()@43tm0gt5!9^-!!&46
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = ["*"]
 
 
 
@@ -77,13 +77,14 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.mysql'),  # or postgresql
-        'NAME': os.getenv('DB_NAME', 'ecommerce_db'),
-        'USER': os.getenv('DB_USER', 'root'),
-        'PASSWORD': os.getenv('DB_PASSWORD', '123'),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', '3306'),
+   'default': {
+      
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ecommerce_db',
+        'USER': 'root',
+        'PASSWORD': '123',
+        'HOST': 'http://127.0.0.1:8000/',
+        'PORT': '3306',
     }
 }
 
